@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.dao.RolePermissionMapper">
+    <parameterMap id="rolePermission" type="com.springboot.domain.pojo.RolePermission"/>
+    <resultMap id="rolePermissionMap" type="com.springboot.domain.pojo.RolePermission">
+        <id column="id" property="id"/>
+        <id column="role_id" property="roleId"/>
+        <id column="permission_id" property="permissionId"/>
+        <id column="created_at" property="createdAt"/>
+        <id column="active" property="active"/>
+    </resultMap>
+
+    <sql id="selectFields">
+        SELECT id, role_id, permission_id, created_at, active
+        FROM role_permissions
+    </sql>
+
+</mapper>
